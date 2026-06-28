@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love! ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" class="music-btn"><i class="fas fa-music"></i></button>
+
+    <div class="hearts-container" id="hearts-container"></div>
+    <canvas id="fireworks-canvas"></canvas>
+
+    <section id="page-1" class="page active">
+        <div class="glass-card text-center">
+            <div class="lock-icon"><i class="fas fa-heart-crack animate-pulse"></i></div>
+            <h2>Enter the Secret Passcode</h2>
+            <p>Hint: Your special date or favorite word</p>
+            <input type="password" id="passcode-input" placeholder="Enter Passcode...">
+            <button onclick="checkPasscode()" class="btn">Unlock Love <i class="fas fa-unlock"></i></button>
+            <p id="error-msg" class="error"></p>
+        </div>
+    </section>
+
+    <section id="page-2" class="page">
+        <div class="glass-card text-center">
+            <div id="gift-box" onclick="openGift()">
+                <div class="gift-lid"></div>
+                <div class="gift-container"><i class="fas fa-gift"></i></div>
+            </div>
+            <div id="gift-message" class="hidden">
+                <h1 class="title-text">Happy Birthday, Beautiful! 🌸</h1>
+                <p id="typewriter-text"></p>
+                <button onclick="nextPage(3)" class="btn current-btn">Continue 👉</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-3" class="page">
+        <h2 class="section-title">Four Reasons I Love You ✨</h2>
+        <div class="grid-container">
+            <div class="grid-box glass-card">
+                <i class="fas fa-smile-beam icon-pink"></i>
+                <h3>Your Smile</h3>
+                <p>Insert sweet words about her smile or how she lights up your day here.</p>
+            </div>
+            <div class="grid-box glass-card">
+                <i class="fas fa-hand-holding-heart icon-purple"></i>
+                <h3>Your Kindness</h3>
+                <p>Write something beautiful about her caring nature and warm heart here.</p>
+            </div>
+            <div class="grid-box glass-card">
+                <i class="fas fa-sparkles icon-pink"></i>
+                <h3>Your Energy</h3>
+                <p>Talk about how amazing it is to be around her and her sparkling aura.</p>
+            </div>
+            <div class="grid-box glass-card">
+                <i class="fas fa-infinity icon-purple"></i>
+                <h3>Our Future</h3>
+                <p>Share a mini message about your dreams and future together right here.</p>
+            </div>
+        </div>
+        <button onclick="nextPage(4)" class="btn grid-nav-btn">See More Magic ✨</button>
+    </section>
+
+    <section id="page-4" class="page">
+        <div class="glass-card text-center">
+            <h2 class="section-title">Our Beautiful Memories 📸</h2>
+            
+            <div class="slider">
+                <div class="slide active">
+                    <img src="https://picsum.photos/id/103/500/350" alt="Memory 1">
+                    <p class="slide-caption">Remember this gorgeous day? 💕</p>
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/104/500/350" alt="Memory 2">
+                    <p class="slide-caption">Laughing with you is my favorite thing to do. 👑</p>
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/106/500/350" alt="Memory 3">
+                    <p class="slide-caption">Forever and always, right by your side. 🔒</p>
+                </div>
+                
+                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+
+            <button onclick="nextPage(5)" class="btn">The Ultimate Surprise 🎁</button>
+        </div>
+    </section>
+
+    <section id="page-5" class="page">
+        <div class="glass-card text-center final-card">
+            <div class="balloon-zone" id="balloon-zone"></div>
+            <h1 class="shimmer-text">To the Moon & Back 🌙</h1>
+            <p class="final-letter">
+                Dearest [Her Name], this little space on the internet belongs entirely to you today. 
+                May your day be filled with endless laughter, magic, and sweet surprises. 
+                Countless balloons, fireworks, and hearts are celebrating YOU right now!
+            </p>
+            <div class="interactive-buttons">
+                <button onclick="triggerConfetti()" class="btn pulse-pink"><i class="fas fa-bomb"></i> Explode Confetti!</button>
+                <button onclick="triggerMassBalloons()" class="btn pulse-purple"><i class="fas fa-cloud"></i> Release Balloons!</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
